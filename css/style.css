@@ -123,15 +123,15 @@ img {
 }
 
 .visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
   overflow: hidden;
 }
 
@@ -261,9 +261,10 @@ img {
 
 .first {
   position: relative;
-  padding: 165px 0;
   max-height: 600px;
   height: 100%;
+  padding-top: 165px;
+  padding-bottom: 175px;
 }
 
 .first__container {
@@ -278,7 +279,7 @@ img {
   right: 0;
   top: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.65);
   z-index: 2;
 }
 
@@ -327,7 +328,7 @@ img {
 .first__decoration-text.decoration-text {
   position: absolute;
   top: 47%;
-  right: 9px;
+  right: 8px;
   text-transform: uppercase;
   transform: rotate(90deg);
   font-size: 12px;
@@ -379,4 +380,89 @@ img {
   width: 60%;
   height: 100%;
   background-color: #fff;
+}
+
+.about {
+  position: relative;
+  padding-top: 296px;
+}
+
+.about__container {
+  max-width: 843px;
+}
+
+.about__text {
+  max-width: 650px;
+}
+
+.about__title {
+  margin-bottom: 31px;
+  max-width: 540px;
+  font-size: 32px;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.about__descr {
+  max-width: 630px;
+  color: rgba(255, 255, 255, 0.3);
+  line-height: 1.7;
+}
+.about__descr:not(:first-child) {
+  margin-bottom: 122px;
+}
+
+.about__descr.about__descr--end {
+  margin-bottom: 40px;
+}
+.about__decoration-text.decoration-text {
+  position: absolute;
+  top: 47%;
+  right: 8px;
+  text-transform: uppercase;
+  transform: rotate(90deg);
+  font-size: 12px;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  line-height: 2.3;
+  z-index: 5;
+  letter-spacing: 5px;
+}
+
+.portfolio__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.portfolio__item {
+  position: relative;
+}
+
+.portfolio__item::before {
+  position: absolute;
+  display: block;
+  content: "";
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.portfolio-item__info {
+  position: absolute;
+  top: 35px;
+  right: 35px;
+  z-index: 9;
+}
+
+.portfolio-item__category {
+  position: absolute;
+  transform: rotate(-90deg);
+  bottom: 75px;
+  left: 0px;
+  line-height: 2.3;
+  z-index: 2;
 }
