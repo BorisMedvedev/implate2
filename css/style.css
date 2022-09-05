@@ -1,6 +1,7 @@
 @font-face {
   font-family: "lato";
-  src: url("../fonts/Lato-Light.woff2") format("woff2"), url("../fonts/Lato-Light.woff") format("woff");
+  src: url("../fonts/Lato-Light.woff2") format("woff2"),
+    url("../fonts/Lato-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -8,7 +9,8 @@
 
 @font-face {
   font-family: "lato";
-  src: url("../fonts/Lato-Regular.woff2") format("woff2"), url("../fonts/Lato-Regular.woff") format("woff");
+  src: url("../fonts/Lato-Regular.woff2") format("woff2"),
+    url("../fonts/Lato-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -16,7 +18,8 @@
 
 @font-face {
   font-family: "lato";
-  src: url("../fonts/Lato-Bold.woff2") format("woff2"), url("../fonts/Lato-Bold.woff") format("woff");
+  src: url("../fonts/Lato-Bold.woff2") format("woff2"),
+    url("../fonts/Lato-Bold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -24,7 +27,8 @@
 
 @font-face {
   font-family: "montserrat";
-  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
+  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"),
+    url("../fonts/Montserrat-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -32,7 +36,8 @@
 
 @font-face {
   font-family: "montserrat";
-  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
+  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"),
+    url("../fonts/Montserrat-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -201,7 +206,6 @@ address {
 .header__container {
   justify-content: space-between;
   align-items: center;
-
 }
 
 .logo {
@@ -327,7 +331,7 @@ address {
   letter-spacing: 1.05px;
 }
 
-.first__decoration-text.decoration-text {
+.decoration-text {
   position: absolute;
   top: 47%;
   right: 8px;
@@ -339,6 +343,8 @@ address {
   line-height: 2.3;
   z-index: 5;
   letter-spacing: 5px;
+  transform-origin: center;
+  width: 15%;
 }
 
 .video-controller {
@@ -380,7 +386,7 @@ address {
   position: absolute;
   left: 0;
   top: 0;
-  width: 60%;
+  width: 0;
   height: 100%;
   background-color: #fff;
 }
@@ -421,20 +427,6 @@ address {
   margin-bottom: 40px;
 }
 
-.about__decoration-text.decoration-text {
-  position: absolute;
-  top: 47%;
-  right: 8px;
-  text-transform: uppercase;
-  transform: rotate(90deg);
-  font-size: 12px;
-  font-family: "Lato", sans-serif;
-  font-weight: 600;
-  line-height: 2.3;
-  z-index: 5;
-  letter-spacing: 5px;
-}
-
 .portfolio__container {
   max-width: 1680px;
 }
@@ -450,11 +442,14 @@ address {
   width: 25%;
   height: 33.35vw;
   cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.5s;
 }
 
-/* .portfolio-item__img {
-  object-fit: contain;
-} */
+.portfolio-item__img {
+  object-fit: cover;
+  width: 100%;
+}
 
 .portfolio__item::before {
   position: absolute;
@@ -464,7 +459,7 @@ address {
   right: 0;
   top: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 2;
   transition: opacity 0.5s;
 }
@@ -482,7 +477,7 @@ address {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-image: url('../images/icons/circle.svg');
+  background-image: url("../images/icons/circle.svg");
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 20;
@@ -501,6 +496,7 @@ address {
   text-align: right;
   font-weight: 600;
   z-index: 9;
+  transition: transform 0.5s;
 }
 
 .portfolio-item__category {
@@ -510,37 +506,21 @@ address {
   left: 0px;
   line-height: 2.3;
   z-index: 2;
+  transition: transform 0.3s;
 }
 
 .contacts {
   position: relative;
-  padding: 100px 0;
-}
-
-.contacts__container {
-  max-width: 1200px;
+  padding: 200px 0;
 }
 
 .contacts__list {
-  justify-content: space-between;
-}
-
-.contacts__decoration-text.decoration-text {
-  position: absolute;
-  top: 47%;
-  right: 8px;
-  text-transform: uppercase;
-  transform: rotate(90deg);
-  font-size: 12px;
-  font-family: "Lato", sans-serif;
-  font-weight: 600;
-  line-height: 2.3;
-  z-index: 5;
-  letter-spacing: 5px;
+  justify-content: flex-start;
 }
 
 .contacts__item {
-  max-width: 150px;
+  margin-right: 100px;
+  max-width: 200px;
 }
 
 .footer {
@@ -556,11 +536,17 @@ address {
   position: fixed;
   top: 0;
   left: 200vw;
+  opacity: 0;
   right: 0;
   bottom: 0;
   background-color: var(--team-backgraund);
   z-index: 300;
-  transition: left 0.5s;
+  transition: left 0.7s, opacity 0.7s;
+}
+
+.menu--showed {
+  opacity: 1;
+  left: 0;
 }
 
 .menu .header {
@@ -569,8 +555,6 @@ address {
 
 .menu-nav {
   margin-left: 32%;
-
-
 }
 
 .menu-nav__link {
