@@ -101,7 +101,7 @@ img {
   margin: 0 auto;
   padding: 0 15px;
   max-width: 1670px;
-  width: 100%;
+
 }
 
 .list-reset {
@@ -433,6 +433,7 @@ img {
 .portfolio__list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .portfolio__item {
@@ -465,4 +466,35 @@ img {
   left: 0px;
   line-height: 2.3;
   z-index: 2;
+}
+
+.contacts {
+  position: relative;
+  padding: 100px 0;
+}
+
+.contacts__container {
+  max-width: 1430px;
+}
+
+.contacts__list {
+justify-content: space-between;
+}
+
+.contacts__decoration-text.decoration-text {
+  position: absolute;
+  top: 47%;
+  right: 8px;
+  text-transform: uppercase;
+  transform: rotate(90deg);
+  font-size: 12px;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  line-height: 2.3;
+  z-index: 5;
+  letter-spacing: 5px;
+}
+
+.contacts__item {
+  max-width: 150px;
 }
