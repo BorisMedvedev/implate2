@@ -1,7 +1,6 @@
 @font-face {
   font-family: "lato";
-  src: url("../fonts/Lato-Light.woff2") format("woff2"),
-    url("../fonts/Lato-Light.woff") format("woff");
+  src: url("../fonts/Lato-Light.woff2") format("woff2"), url("../fonts/Lato-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -9,8 +8,7 @@
 
 @font-face {
   font-family: "lato";
-  src: url("../fonts/Lato-Regular.woff2") format("woff2"),
-    url("../fonts/Lato-Regular.woff") format("woff");
+  src: url("../fonts/Lato-Regular.woff2") format("woff2"), url("../fonts/Lato-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -18,8 +16,7 @@
 
 @font-face {
   font-family: "lato";
-  src: url("../fonts/Lato-Bold.woff2") format("woff2"),
-    url("../fonts/Lato-Bold.woff") format("woff");
+  src: url("../fonts/Lato-Bold.woff2") format("woff2"), url("../fonts/Lato-Bold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -27,8 +24,7 @@
 
 @font-face {
   font-family: "montserrat";
-  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"),
-    url("../fonts/Montserrat-Regular.woff") format("woff");
+  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -36,8 +32,7 @@
 
 @font-face {
   font-family: "montserrat";
-  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"),
-    url("../fonts/Montserrat-Medium.woff") format("woff");
+  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -97,11 +92,14 @@ img {
   max-width: 100%;
 }
 
+address {
+  font-style: normal;
+}
+
 .container {
   margin: 0 auto;
   padding: 0 20px;
   max-width: 1683px;
-
 }
 
 .list-reset {
@@ -195,12 +193,15 @@ img {
 }
 
 .header {
+  position: relative;
   padding: 107px 0;
+  z-index: 50;
 }
 
 .header__container {
   justify-content: space-between;
   align-items: center;
+
 }
 
 .logo {
@@ -448,6 +449,7 @@ img {
   position: relative;
   width: 25%;
   height: 33.35vw;
+  cursor: pointer;
 }
 
 /* .portfolio-item__img {
@@ -464,6 +466,32 @@ img {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 2;
+  transition: opacity 0.5s;
+}
+
+.portfolio__item:hover::before {
+  opacity: 0;
+}
+
+.portfolio__item::after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 120px;
+  height: 120px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url('../images/icons/circle.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 20;
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+
+.portfolio__item:hover::after {
+  opacity: 1;
 }
 
 .portfolio-item__info {
@@ -522,4 +550,42 @@ img {
 .footer__container {
   align-items: center;
   justify-content: space-between;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 200vw;
+  right: 0;
+  bottom: 0;
+  background-color: var(--team-backgraund);
+  z-index: 300;
+  transition: left 0.5s;
+}
+
+.menu .header {
+  padding: 45px 0;
+}
+
+.menu-nav {
+  margin-left: 32%;
+
+
+}
+
+.menu-nav__link {
+  display: inline-block;
+  margin-bottom: 25px;
+  font-size: 48px;
+  color: rgba(255, 255, 255, 0.2);
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.menu-nav__link.active {
+  color: #fff;
+}
+
+.menu-nav__link:hover {
+  color: rgba(255, 255, 255, 1);
 }
