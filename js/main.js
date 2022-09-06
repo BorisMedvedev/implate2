@@ -21,6 +21,8 @@ video.ontimeupdate = function () {
 document.addEventListener('DOMContentLoaded', () => {
   const burger = document.querySelector('.burger');
   const menu = document.querySelector('.menu');
+  const close = document.querySelector('.close');
+  const body = document.body;
   let keys = {
     ESC: 27,
   };
@@ -29,6 +31,11 @@ document.addEventListener('DOMContentLoaded', () => {
     menu.classList.add('menu--showed');
   };
   burger.addEventListener('click', showMenu);
+
+  function closeMenu() {
+    menu.classList.remove('menu--showed');
+  };
+  close.addEventListener('click', closeMenu);
 });
 
 
